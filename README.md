@@ -29,7 +29,7 @@ The best way to go about is to implement one dimensional array and use mathemati
 - Implement linear algebra library 
     - [x] define the data structure of a Matrix(Matrix.h) 
     - [x] flatening a matrix
-    - [] Matrix addition
+    - [x] Matrix addition
     - [] Matrix substraction
     - [] scalar multiplication
     - [] Matrix multiplication

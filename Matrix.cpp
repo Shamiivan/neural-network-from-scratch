@@ -13,6 +13,7 @@ Matrix::Matrix(vector<vector<double>>& data){
 
 
     int index = 0;
+    //flatten the array
     for(int i = 0; i < n_rows; i++){
         for(int j = 0; j < n_cols; j++){
             index = i * n_cols + j;
@@ -24,7 +25,7 @@ Matrix::~Matrix(){
     delete []m_data;
 }
 
-int Matrix::get_size() const {return size;}
+int Matrix::get_size(){return size;}
 
 double Matrix::operator()(int i, int j)const{
     int index = i*n_cols + j;
@@ -47,14 +48,28 @@ Matrix Matrix::operator+(Matrix& other){
     Matrix result(n_rows, n_cols);
     double sum;
     for(int i = 0; i<size; i++){
-        sum = other.m_data[i] + m_data[i];
+        sum = other[i] + m_data[i];
         result[i] = sum;
     }
     return result;
 }; 
-// Matrix* Matrix::operator-(Matrix*){}; /// subtraction operator
+Matrix Matrix::operator-(Matrix &other){
+    Matrix result(n_rows, n_cols);
+    double diff;
+    for(int i = 0; i<size; i++){
+        diff = m_data[i] - other[i];
+        result[i] = diff;
+    }
+    return result;
+}
+Matrix Matrix::operator*(double k){
+    Matrix result(n_rows, n_cols);
+    for(int i = 0; i<size; i++){
+        result[i] = m_data[i] * k;
+    }
+    return result;
+}
 // Matrix* Matrix::operator*(Matrix*){}; /// multiplication operator
-// Matrix* Matrix::scalar_muliplication(double){};
 // Matrix* transpose(Matrix*){}; // transpose any matrix 
 ostream& operator<<(ostream& os, Matrix* matrix){
     for(int i = 0; i < matrix->size; i++){

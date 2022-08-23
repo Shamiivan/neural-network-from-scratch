@@ -24,17 +24,17 @@ class Matrix{
         double operator()(int i, int j)const; // return the element at i,j
         double& operator()(int i, int j); // return
         double& operator[](int index); // Access values as one d array
-        int get_size() const;
+        int get_size();
         
 
         //setting values
         void set_value(int i, int j, double val);
         //matrix operations
         Matrix operator+(Matrix&);
-        Matrix* operator-(Matrix*);
-        Matrix* operator*(Matrix*); // perform matrix multiplication
-        Matrix* scalar_muliplication(double);
-        friend Matrix* transpose(Matrix*); // transpose any matrix 
+        Matrix operator-(Matrix&);
+        Matrix operator*(Matrix&); //matrix multiplication
+        Matrix operator*(double); //scalar_muliplication
+        friend Matrix& transpose(Matrix&); // transpose any matrix 
         friend ostream& operator<<(ostream&, Matrix*); 
         friend ostream& operator<<(ostream&, Matrix&); 
     
