@@ -2,7 +2,13 @@
 Implementation of a neural network in c++ from scratch
 
 ## Definition
-
+    defined as 1d array
+    formula to go from 2d to 1d viceversa
+    index : 1d array
+    i,j : 2d
+    index = i * number of colums + j // Give i and j calculate i
+    i = index/number of rows 
+    j = index-i*number of rows
 
 ## Basic operations
 - addition
@@ -21,8 +27,13 @@ The best way to go about is to implement one dimensional array and use mathemati
 ### TOdos;
 
 - Implement linear algebra library 
-    - define the data structure of a Matrix(Matrix.h) 
-    -flatening a matrix
+    - [x] define the data structure of a Matrix(Matrix.h) 
+    - [x] flatening a matrix
+    - [] Matrix addition
+    - [] Matrix substraction
+    - [] scalar multiplication
+    - [] Matrix multiplication
+
     - Linear transformation
 
 
